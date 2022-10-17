@@ -1,0 +1,17 @@
+img {
+    max-height: 80vh;
+    object-fit: cover;
+}
+.card {
+    text-align: center;
+    /* min-height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
