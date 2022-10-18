@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
 import Details from "./component/Details";
 import Header from "./component/Header";
 import Main from "./component/Main";
