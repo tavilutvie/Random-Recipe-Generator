@@ -4,7 +4,7 @@ nav {
     padding-left: 40px;
     padding-bottom: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
@@ -16,7 +16,7 @@ nav {
   line-height: 78px;
   font-size: 20px;
   font-family: 'Bebas Neue', sans-serif;
-  background: linear-gradient(45deg, transparent 5%, #ff0101 5%);
+  background: linear-gradient(45deg, transparent 5%, #898400 5%);
   border: 0;
   color: #fff;
   letter-spacing: 3px;
@@ -46,7 +46,7 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #898400 5%);
   text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
   clip-path: var(--slice-0);
 }

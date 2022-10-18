@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Header.css'
 const Header = () => {
 
@@ -7,7 +8,8 @@ const Header = () => {
       
     return (
         <nav>
-            <button class="button-49" onClick={refreshPage}>Click to reload!</button>
+            <Link to="/"><button class="button-49">Home</button></Link>
+            <button class="button-49" onClick={refreshPage}>Refresh</button>
         </nav>
     )
 }
