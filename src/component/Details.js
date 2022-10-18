@@ -33,6 +33,7 @@ const Details = () => {
       {error ? <h2>Error fetching data</h2> : null}
       {data ? (
         <>
+          <h2>{data[0].strMeal}</h2>
           <img src={data[0].strMealThumb} alt={data[0].strMeal} />
           <h2>{data[0].strMeal}</h2>
           <Recipe recipe={data[0]}/>
