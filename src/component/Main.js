@@ -9,7 +9,7 @@ const Main = () => {
       <div className="card">
         <h2>What to Eat?</h2>
         <p>Discover foods to cook and eat!</p>
-        <a href="#featured">v</a>
+        <a href="#featured"><button>v</button></a>
       </div>
       <Featured />
     </>

@@ -27,9 +27,10 @@ const Featured = () => {
       {error ? <h2>Error fetching data</h2> : null}
       {data ? (
         <>
-          <img src={data[0].strMealThumb} alt={data[0].strMeal} />
-          <p><em>featured</em></p>
+          <p><em>Featured Menu</em></p>
           <h2>{data[0].strMeal}</h2>
+          <img src={data[0].strMealThumb} alt={data[0].strMeal} />
+          <p><em>click the button below to see the recipe</em></p>
           <Link to={"/details/" + data[0].idMeal}>
             <button>Details &gt;</button>{" "}
           </Link>

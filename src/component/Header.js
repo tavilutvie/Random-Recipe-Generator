@@ -7,7 +7,7 @@ const Header = () => {
       
     return (
         <nav>
-            <button class="button-49" role="button" onClick={refreshPage}>Click to reload!</button>
+            <button class="button-49" onClick={refreshPage}>Click to reload!</button>
         </nav>
     )
 }
