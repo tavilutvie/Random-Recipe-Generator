@@ -8,6 +8,7 @@ import MainIngredient from "../pages/MainIngredient";
 import SearchCategory from "../pages/SearchCategory";
 import SearchArea from "../pages/SearchArea";
 import SearchIngredient from "../pages/SearchIngredient";
+import SearchName from "../pages/SearchName";
 
 export default function Router() {
   return (
@@ -20,6 +21,7 @@ export default function Router() {
         <Route path='/SearchCategory/:id' element={<SearchCategory />} />
         <Route path='/MainIngredient' element={<MainIngredient />} exact />
         <Route path='/SearchIngredient/:id' element={<SearchIngredient />} />
+        <Route path='/SearchName/:id' element={<SearchName />} />
     </Routes>
   );
 }
