@@ -48,36 +48,26 @@ export default function Navbar() {
               </div>
               
               <div className="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
-              <form
-            onSubmit={(e) => handleSubmit(e)}>
-                <div className="max-w-lg w-full lg:max-w-xs">
-                  <label htmlFor="search" className="sr-only">
-                    Search
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <MdSearch className="h-5 w-5 text-gray-400" aria-hidden="true" />
-                    </div>
-                    <input
+                <form onSubmit={(e) => handleSubmit(e)}>
+                  <div className="max-w-lg w-full lg:max-w-xs">
+                    <label htmlFor="search" className="sr-only">
+                      Search
+                    </label>
+                    <div className="relative">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <MdSearch className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                      </div>
+                      <input
                       id="search"
                       name="search"
                       className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       placeholder="Search"
                       type="search"
                       value={searchValue}
-                      onChange={(e) => setSearchValue(e.target.value)}
-                    />
+                      onChange={(e) => setSearchValue(e.target.value)}/>
+                    </div>
                   </div>
-                </div>
                 </form>
-                {/* <span className="inline-flex rounded-md shadow">
-                  <a
-                    href="#"
-                    className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50"
-                  >
-                    Log in
-                  </a>
-                </span> */}
               </div>
             </nav>
           </div>
@@ -105,24 +95,27 @@ export default function Navbar() {
                     />
                   </div>
                   <div className="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
-                <div className="max-w-lg w-full lg:max-w-xs">
-                  <label htmlFor="search" className="sr-only">
-                    Search
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <MdSearch className="h-5 w-5 text-gray-400" aria-hidden="true" />
-                    </div>
-                    <input
-                      id="search"
-                      name="search"
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                      placeholder="Search"
-                      type="search"
-                    />
+                    <form onSubmit={(e) => handleSubmit(e)}>
+                      <div className="max-w-lg w-full lg:max-w-xs">
+                        <label htmlFor="search" className="sr-only">
+                          Search
+                        </label>
+                        <div className="relative">
+                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <MdSearch className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                          </div>
+                          <input
+                          id="search"
+                          name="search"
+                          className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                          placeholder="Search"
+                          type="search"
+                          value={searchValue}
+                          onChange={(e) => setSearchValue(e.target.value)}/>
+                        </div>
+                      </div>
+                    </form>
                   </div>
-                </div>
-                </div>
                   <div className="-mr-2">
                     <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                       <span className="sr-only">Close menu</span>
@@ -133,26 +126,17 @@ export default function Navbar() {
                 <div className="px-2 pt-2 pb-3">
                   {navigation.map((item) => (
                     <Link
-                      key={item.name}
-                      to={item.href}
-                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                    >
+                    key={item.name}
+                    to={item.href}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
                       {item.name}
                     </Link>
                   ))}
                 </div>
-                
-                {/* <a
-                  href="#"
-                  className="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"
-                >
-                  Log in
-                </a> */}
               </div>
             </Popover.Panel>
           </Transition>
         </Popover>
-        
       </div>
     </div>
   )

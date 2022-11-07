@@ -7,7 +7,6 @@ const Steps = (props) => {
         steps = value;
       }
     }
-    //console.log(steps);
     let stepList =[];
     const stepList2 =[];
     const stepArray = steps.split(". ");
@@ -18,8 +17,6 @@ const Steps = (props) => {
             stepList2.push(stepList[j]);
         }
     }
-    // console.log(stepArray);
-    // console.log(stepList2);
 
     return(
         <div className="my-5 relative mx-auto max-w-md px-4 md:max-w-3xl sm:px-6 lg:px-0">

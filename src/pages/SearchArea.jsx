@@ -33,6 +33,7 @@ import { Link, useParams } from "react-router-dom";
 
     return (
       <div className="p-10">
+        <p className="pb-10 text-center font-medium text-xl">{id}</p>
         {error ? <h2>Error fetching data</h2> : null}
             {data ? (
       <ul className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8 ">
