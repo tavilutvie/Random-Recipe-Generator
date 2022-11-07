@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 
     const { id } = useParams();
     console.log("id is: " + id);
-    const url = "https://www.themealdb.com/api/json/v1/1/filter.php?a=" + id;
+    const url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + id;
 
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
