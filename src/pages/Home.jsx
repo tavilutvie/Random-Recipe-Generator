@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import DefaultBackground from '../components/DefaultBackground';
 import { BiRefresh } from 'react-icons/bi';
 import { FaUtensils } from 'react-icons/fa';
+import FoodAnimation from '../components/FoodAnimation';
 
 export default function Home() {
   const [data, setData] = useState(null);
@@ -53,6 +54,10 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-[#FDFDFD]">
       <DefaultBackground />
+      {/* Add FoodAnimation component for desktop only */}
+      <div className="hidden lg:block">
+        <FoodAnimation />
+      </div>
       
       <div className="relative">
         {loading ? (
