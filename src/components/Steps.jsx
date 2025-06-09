@@ -1,43 +1,37 @@
 const Steps = (props) => {
-    const recipeList = props.recipe;
-    let steps = "";
-    
-    for (const [key, value] of Object.entries(recipeList)) {
-      if (key === "strInstructions") {
-        steps = value;
-      }
-    }
-    let stepList =[];
-    const stepList2 =[];
-    const stepArray = steps.split(". ");
+  const recipeList = props.recipe;
+  const instructions = recipeList.strInstructions;
 
-    for (let i = 0; i < stepArray.length; i++) {
-        stepList = stepArray[i].split(".\r\n\r\n");
-        for (let j=0; j <stepList.length; j++){
-            stepList2.push(stepList[j]);
-        }
-    }
+  // Split instructions into paragraphs
+  const steps = instructions
+    .split('\n')
+    .map(step => step.trim())
+    .filter(step => step.length > 0);
 
-    return(
-        <div className="my-5 relative mx-auto max-w-md px-4 md:max-w-3xl sm:px-6 lg:px-0">
-            <div className="bg-white shadow overflow-hidden sm:rounded-lg">
-                <div className="px-4 py-5 sm:px-6">
-                    <h2 className="text-3xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">Steps</h2>
-                    <p className="mt-1 max-w-2xl text-sm text-gray-500">Steps in order to make a delicious {recipeList.strMeal}</p>
+  return (
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="bg-[#FDFDFD] shadow-lg rounded-2xl overflow-hidden">
+        <div className="px-6 py-8">
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Instructions</h2>
+            <div className="space-y-4">
+              {steps.map((step, index) => (
+                <div 
+                  key={index}
+                  className="flex items-start p-4 bg-primary-50 rounded-lg hover:bg-primary-100 transition-colors duration-200"
+                >
+                  <span className="w-8 h-8 flex-shrink-0 flex items-center justify-center bg-primary-100 text-primary-600 rounded-full font-medium text-sm">
+                    {index + 1}
+                  </span>
+                  <p className="ml-4 text-gray-700">{step}</p>
                 </div>
-                {stepList2.map((steps, index) => (
-                    <div className="border-t border-gray-200 px-4 py-5 sm:p-0">
-                        <dl className="sm:divide-y sm:divide-gray-200">
-                            <div className="py-4 sm:py-5 sm:grid sm:grid-cols-6 sm:gap-2 sm:px-6">
-                                <dt className="text-sm font-medium text-gray-500 sm:col-span-1">{index+1}.</dt>
-                                <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-5">{steps}.</dd>
-                            </div>
-                        </dl>
-                    </div>
-                ))}
+              ))}
             </div>
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
 export default Steps;
