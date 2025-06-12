@@ -2,11 +2,19 @@ const Steps = (props) => {
   const recipeList = props.recipe;
   const instructions = recipeList.strInstructions;
 
-  // Split instructions into paragraphs
+  // Split instructions into paragraphs and process them
   const steps = instructions
     .split('\n')
     .map(step => step.trim())
-    .filter(step => step.length > 0);
+    .filter(step => step.length > 0)
+    // Filter out standalone step indicators
+    .filter(step => !(/^(step\s*\d+|step\s*\d+\s*[-–—]\s*.*|step\s*\d+\s*:.*|\d+\s*[-–—]?\s*$)/i.test(step)))
+    // Remove numerical prefixes from steps
+    .map(step => step.replace(/^\d+\s*[-–—:.]\s*/i, ''))
+    // Remove "STEP X" prefixes
+    .map(step => step.replace(/^step\s*\d+\s*[-–—:.]\s*/i, ''))
+    // Capitalize first letter of each step
+    .map(step => step.charAt(0).toUpperCase() + step.slice(1));
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
